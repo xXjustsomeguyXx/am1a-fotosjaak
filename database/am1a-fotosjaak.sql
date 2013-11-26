@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 25 nov 2013 om 14:19
+-- Genereertijd: 26 nov 2013 om 09:59
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `am1a`
+-- Databank: `am1a-fotosjaak`
 --
 CREATE DATABASE IF NOT EXISTS `am1a-fotosjaak` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `am1a-fotosjaak`;
@@ -52,6 +52,43 @@ INSERT INTO `faq` (`id`, `question_english`, `question_dutch`, `answer_english`,
 (8, 'What''s the goal of the game?', 'Wat is het doel van het spel?', 'The Goal of this game is to kill all the zombies.\r\nand get so much as possible points', 'Het doel van deze game is om alle zombies te doden.\r\nen zoveel mogelijk punten krijgen'),
 (9, 'I can immediately play the game when, i download it.', 'kan ik de game meteen spelen, wanneer ik de game download', 'No, You must first Instal the game.', 'nee, Je moet de game eerst installeren'),
 (10, 'Is there a manual by the game? can i download it.', 'is er een handleiding bij de game? kan ik die downloaden.\r\n', 'yes, there is a manual and you can download it on the download page', 'ja, er is een handleiding je kan die downloaden op de download page');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(12) NOT NULL,
+  `userrole` enum('customer','root','adminitrator','photographer','developer') NOT NULL DEFAULT 'customer',
+  `activated` enum('yes','no') NOT NULL DEFAULT 'no',
+  `activationdate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(10) unsigned NOT NULL,
+  `firstname` varchar(200) NOT NULL,
+  `infix` varchar(50) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `addressnumber` varchar(10) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `zipcode` varchar(6) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `phonenumber` varchar(200) NOT NULL,
+  `telephonenumber` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
