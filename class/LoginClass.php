@@ -14,17 +14,18 @@
 		
 		//properties
 		public function get_id(){ return $this->id; } 
-		
-			
-		
-		
+		public function get_email(){ return $this->email ; } 
+		public function get_password(){ return $this->password; } 
+		public function get_userrole(){ return $this->userrole; } 
+		public function get_activated(){ return $this->activated; }
+		public function get_activationdate(){ return $this->activationdate; }  
 		//Constructor
 		public function __constructor()
 		{
 			
 		}
 		
-		public function find_by_sql($query)
+		public static function find_by_sql($query)
 		{
 			// met global maak je het database-object uit de MySqlDatabase-class
 			//bruikbaar binnen de find_by_sql method
@@ -56,6 +57,31 @@
 			}
 			return $object_array;
 		}
+	//deze method selecteert alle records uit de login table. we maken gebrukt
+	// van de find_by_sql($query) method uit deze class.
+	
+		public static function select_all_from_login()
+		{
+			$query = "SELECT * FROM `login`";
+			$result = self::find_by_sql($query);
+			return $result;
+		}
+		public static function email_exists($emailadress)
+		{
+			global $database;
+			$query = "SELECT * FROM `login`
+								WHERE `email` = '".$emailaddress."'";
+			$result = $database->fire_query($query);
+			if (mysql_num_rows(result) > 0)
+			{
+				return "true"het e-mailadres bestaat al in de database";
+			}
+			else {
+			{
+				return "het e-mailadres bestaat niet";		
+			}
+		}
 	}
+}
 
 ?>
