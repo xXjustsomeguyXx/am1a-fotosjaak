@@ -74,7 +74,7 @@
 			$result = $database->fire_query($query);
 			if (mysql_num_rows(result) > 0)
 			{
-				return "true"het e-mailadres bestaat al in de database";
+				return "het e-mailadres bestaat al in de database";
 			}
 			else {
 			{

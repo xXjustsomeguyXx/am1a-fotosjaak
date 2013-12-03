@@ -33,8 +33,8 @@
 	}
 	echo "</table>";
 ?>
-
-
-<h3>Dit is de logintest pagina</h3>
-
+bestaat het e-mailadres admin@hotmail.com
+<?php
+	
+?>
 
