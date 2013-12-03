@@ -3,7 +3,9 @@
 	<li>
 		<a href="index.php?content=Homepage"><b>home</b></a>
 	</li>
-	
+	<li>
+		<a href="index.php?content=logintest"><b>logintest</b></a>
+	</li>
 <?php if ( isset($_SESSION[ 'userrole' ]))
 		{
 				echo "	<li>
