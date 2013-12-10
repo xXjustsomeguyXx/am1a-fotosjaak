@@ -1,4 +1,5 @@
 <?php
+	require_once("class/SessionClass.php");
 	require_once("class/LoginClass.php");
 	//check of beide velden zijn ingevoerd
 	if (!empty($_POST['email'])&& !empty($_POST['password']))
@@ -9,17 +10,13 @@
 													  $_POST['password']))
 													  
 													  
+													  
 		{
 			//echo "De combinatie bestaat";exit();
 		//verwijs door naar de homepage van de geregistreerde gebruiker
 		//echo "record bestaat in database";
-		$user_object = LoginClass::find_user_by_email_password($_POST['email'],
-															   $_POST['password']);
-		
-		
-		$_SESSION['id'] = $user_object->get_id(); 
-		$_SESSION[ 'userrole' ] = $user_object->get_userrole();
-		
+		$session->login(LoginClass::find_user_by_email_password($_POST['email'],
+															   $_POST['password']));
 		switch ($_SESSION['userrole'])
 		{
 			case 'root':
@@ -32,6 +29,14 @@
 			
 			case 'customer';
 					header("location:index.php?content=customer_homepage");
+			break;
+			
+			case 'photographer';
+					header("location:index.php?content=photographer_homepage");
+			break;
+			
+			case 'developer';
+					header("location:index.php?content=developer_homepage");
 			break;
 		
 		}
