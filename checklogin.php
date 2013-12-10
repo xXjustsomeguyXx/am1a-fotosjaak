@@ -1,24 +1,26 @@
 <?php
+	require_once("class/LoginClass.php");
 	//check of beide velden zijn ingevoerd
 	if (!empty($_POST['email'])&& !empty($_POST['password']))
 	{
-		include('./connect_db.php');
-		$query = "SELECT * 
-				  FROM  `users`
-				  WHERE `email`    = '".$_POST['email']."'
-				  AND   `password` = '".$_POST['password']."'";
-		//echo $query;
-		//vuur de query af op de database
-		$result = mysql_query($query, $db);
-		if (mysql_num_rows($result) > 0)
+		//check of de ingevule emailadres en wachtwoord bestaan in database
+		
+		if (LoginClass::check_if_email_password_exist($_POST['email'],
+													  $_POST['password']))
+													  
+													  
 		{
+			//echo "De combinatie bestaat";exit();
 		//verwijs door naar de homepage van de geregistreerde gebruiker
 		//echo "record bestaat in database";
-		$record = mysql_fetch_array($result);
-		$_SESSION['id'] = $record['id']; 
-		$_SESSION[ 'userrole' ] = $record [ 'userrole'];
+		$user_object = LoginClass::find_user_by_email_password($_POST['email'],
+															   $_POST['password']);
 		
-		switch ($record['userrole'])
+		
+		$_SESSION['id'] = $user_object->get_id(); 
+		$_SESSION[ 'userrole' ] = $user_object->get_userrole();
+		
+		switch ($_SESSION['userrole'])
 		{
 			case 'root':
 						header("location:index.php?content=root_homepage");

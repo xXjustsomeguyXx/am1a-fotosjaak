@@ -82,6 +82,32 @@
 			}
 		}
 	}
+		public static function check_if_email_password_exist($email, $password)
+		{
+			global $database;
+			$query = "SELECT * FROM `login` WHERE `email` = '".$email."' AND `password` = '".$password."'";
+		
+		$result = $database->fire_query($query);
+		if (mysql_num_rows($result) > 0)
+		{
+			return true;
+		}
+		else 
+		{
+			return false;		
+		}
+	}	
+		public static function find_user_by_email_password ($email, $password)
+		{
+			$query = "SELECT * FROM `login` WHERE `email` = '".$email."' AND `password` = '".$password."'";
+			
+			//echo $query; exit();
+			$LogClassObjectInArray = self::find_by_sql($query);
+			$loginClassObject = array_shift($LogClassObjectInArray);
+			return $loginClassObject;
+		}
 }
+
+		
 
 ?>
