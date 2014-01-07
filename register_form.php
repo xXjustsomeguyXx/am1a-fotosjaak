@@ -54,8 +54,8 @@
                                 </td>
                                 
                                 <td>
-                                        <input type="text" size="20" name="adress"/> 
-                                        <input type="text" size="1" name="adressnumber"/> 
+                                        <input type="text" size="20" name="address"/> 
+                                        <input type="text" size="1" name="addressnumber"/> 
                                 </td>
                         </tr>
 
@@ -66,7 +66,7 @@
                                 
                                 <td>
                                         <input type="text" size="17" name="city"/> 
-                                        <input type="text" size="4" name="postalcode"/> 
+                                        <input type="text" size="4" name="zipcode"/> 
                                 </td>
                         </tr>
                         

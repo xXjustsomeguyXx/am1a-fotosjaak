@@ -17,13 +17,13 @@
                 
         }
 
-        header("refresh:1500; url=index.php?content=login_form");
+        header("refresh:5; url=index.php?content=register_form");
 
         //hier wordt contact gemaakt met de mysql server
         $db = mysql_connect("localhost", "root", "");        
         
         //Hier wordt er een database gekozen op de mysql server
-        mysql_select_db("fotosjaak", $db) or die("De database is niet gevonden");
+        mysql_select_db("am1a-fotosjaak", $db) or die("De database is niet gevonden");
         
         $sql = "INSERT INTO `user` ( `id`, 
                                                                 `firstname`,
@@ -43,14 +43,14 @@
                                                                 '".$_POST['firstname']."',
                                                                 '".$_POST['infix']."',
                                                                 '".$_POST['surname']."',
-                                                                '".$_POST['adress']."',
-                                                                '".$_POST['adressnumber']."',
+                                                                '".$_POST['address']."',
+                                                                '".$_POST['addressnumber']."',
                                                                 '".$_POST['city']."',
-                                                                '".$_POST['postalcode']."',
+                                                                '".$_POST['zipcode']."',
                                                                 '".$_POST['country']."',
                                                                 '".$_POST['phonenumber']."',
                                                                 '".$_POST['mobilephonenumber']."',
                                                                 'customer'
                                                                 
                                                                 )";
-?>c
+?>

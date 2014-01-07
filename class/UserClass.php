@@ -1,5 +1,5 @@
 <?php
- require_once("MySqlDatabaseClass.php");
+ require_once('MySqlDatabaseClass.php');
 
  class UserClass
  {
@@ -77,7 +77,7 @@
                                                                           `city`,
                                                                           `zipcode`,
                                                                           `country`,
-                                                                          `telephonenumber`,
+                                                                          `phonenumber`,
                                                                           `mobilephonenumber`)
                                   VALUES                         ('".$id."',
                                                                             '".$postarray['firstname']."',
@@ -88,7 +88,7 @@
                                                                           '".$postarray['city']."',
                                                                           '".$postarray['zipcode']."',
                                                                           '".$postarray['country']."',
-                                                                          '".$postarray['telephonenumber']."',
+                                                                          '".$postarray['phonenumber']."',
                                                                           '".$postarray['mobilephonenumber']."')";
                                                                           
                 $database->fire_query($query);                
