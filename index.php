@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-		 Mijn eerste website
+		 Mijn tweede website
 		</title>
 		<link rel='stylesheet' type='text/css' href='css/style.css'/>
 	</head>

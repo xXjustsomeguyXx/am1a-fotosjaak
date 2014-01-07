@@ -34,7 +34,5 @@
 	echo "</table>";
 ?>
 bestaat het e-mailadres admin@hotmail.com
-<?php
-	
-?>
+
 
