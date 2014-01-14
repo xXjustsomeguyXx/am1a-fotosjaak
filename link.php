@@ -20,6 +20,9 @@
 						echo "<li>
 								<a href='index.php?content=faqpage'><b>FAQ</b></a>
 							  </li>";
+						echo "<li>
+								<a href='index.php?content=opdracht'><b>opdracht</b></a>
+							  </li>";
 					break;
 					case 'administrator':
 					echo 	  "<li>

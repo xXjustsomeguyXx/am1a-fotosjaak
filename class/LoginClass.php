@@ -204,7 +204,7 @@
                         $to = $post_array['email'];
                         $subject = "Activatie website FotoSjaak";
                         
-                        
+                        /*
                         $message = "Geachte heer/mevrouw ".
                                            $post_array['firstname']." ".
                                            $post_array['infix']." ".
@@ -214,8 +214,19 @@
                         $message .= "http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."\r\n";
                         $message .= "Met vriendelijke groet,\r\n";
                         $message .= "Sjaak de Vries\r\n";
-                        $message .= "Uw fotograaf";      
-						
+                        $message .= "Uw fotograaf";        
+                        */
+                        
+                        $message = "<p><u>Geachte heer/mevrouw <b>".
+                                           $post_array['firstname']." ".
+                                           $post_array['infix']." ".
+                                           $post_array['surname']."</b></u></p>";
+                        $message .= "Voor u kunt inloggen, moet uw account nog worden geactiveerd.<br>";
+                        $message .= "Klik hiervoor op de onderstaande link<br><br>";
+                        $message .= "<a href='http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."'>activeer account</a><br><br>";
+                        $message .= "Met vriendelijke groet,<br>";
+                        $message .= "Sjaak de Vries<br>";
+                        $message .= "Uw fotograaf";        
                         
                         $headers  = "From: info@fotosjaak.nl\r\n";
                         $headers .=        "Reply-To: info@fotosjaak.nl\r\n";
@@ -223,7 +234,8 @@
                         $headers .= "Bcc: admin@fotosjaak.nl\r\n";
                         $headers .= "X-mailer: PHP/".phpversion()."\r\n";
                         $headers .= "MIME-version: 1.0\r\n";
-                        $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+                        //$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+                        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
                         mail($to, $subject, $message, $headers);
                 }                                                                                        
         }
