@@ -1,105 +1,82 @@
-<h2>Register</h2>
-<div class="registerform">
-        <form action="index.php?content=register" method="post">
-
-                <table border="0.5">
-                        <tr>
-                                <td>
-                                        Voornaam:
-                                </td>
-                                <td>
-                                        <input type="text" size="28" name="firstname"/>
-                                </td>
-                        </tr>
-                        
-                        <tr>
-                                <td>
-                                        Tussenvoegsel:
-                                </td>
-                                <td>
-                                        <input type="text" size="28" name="infix"/>
-                                </td>
-                        </tr>                
-                        
-                        <tr>
-                                <td>
-                                        Achternaam:
-                                </td>
-                                <td>
-                                        <input type="text" size="28" name="surname"/>
-                                </td>
-                        </tr>
-                        
-                        <tr>
-                                <td>
-                                        Telefoon:
-                                </td>
-                                <td>
-                                        <input type="text" size="28" name="phonenumber"/>
-                                </td>
-                        </tr>
-                        
-                        <tr>
-                                <td>
-                                        Mobiel:
-                                </td>
-                                <td>
-                                        <input type="text" size="28" name="mobilephonenumber"/>
-                                </td>
-                        </tr>
-                        
-                        <tr>
-                                <td>
-                                        Adres:
-                                </td>
-                                
-                                <td>
-                                        <input type="text" size="20" name="address"/> 
-                                        <input type="text" size="1" name="addressnumber"/> 
-                                </td>
-                        </tr>
-
-                        <tr>
-                                <td>
-                                        Woonplaats:
-                                </td>
-                                
-                                <td>
-                                        <input type="text" size="17" name="city"/> 
-                                        <input type="text" size="4" name="zipcode"/> 
-                                </td>
-                        </tr>
-                        
-                        <tr>
-                                <td>
-                                        Land: 
-                                </td>
-                                
-                                <td>
-                                        <input type="text" size="28" name="country" />
-                                </td>
-                        </tr>
-                        
-                        
-                        <tr>
-                                <td>
-                                        E-mail:
-                                </td>
-                                
-                                <td>
-                                        <input type="email"  size="28" name="email"/> 
-                                </td>
-                        </tr>
-
-                        <tr>
-                                <td>
-
-                                </td>
-                                <td>
-                                        <input type="submit" name="Registreren" value="submit"/>
-                                </td>
-                        </tr>                
-                </table>
-</div>
-
-                <!-- -->
+<form action="./index.php?content=register" method="post">
+        <table>
+                <tr>
+                        <td>voornaam:</td>
+                </tr>
+                <tr>
+                        <td><input type="text" name="firstname" /></td>
+                </tr>
+                <tr>
+                        <td>tussenvoegsel</td>
+                </tr>
+                <tr>
+                        <td><input type="text" name="infix" /></td>
+                </tr>
+                <tr>
+                        <td>achternaam</td>
+                </tr>
+                <tr>
+                        <td><input type="text" name="surname" /></td>
+                </tr>
+                <tr>
+                        <td>straat + huisnummer</td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="address" />
+                                <input type="number" min="0" max="18923" name="addressnumber"/>
+                        </td>
+                </tr>
+                <tr>
+                        <td>Stad: </td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="city" />
+                        </td>
+                </tr>
+                <tr>
+                        <td>Postcode: </td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="zipcode" />
+                        </td>
+                </tr>
+                <tr>
+                        <td>Land: </td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="country" />
+                        </td>
+                </tr>
+                <tr>
+                        <td>email</td>
+                </tr>
+                <tr>                                
+                        <td>
+                                <input type='email' name='email' />
+                        </td>
+                </tr>
+                <tr>
+                        <td>telefoonnummer vast: </td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="telephonenumber" />
+                        </td>
+                </tr>
+                <tr>
+                        <td>mobiel nummer: </td>
+                </tr>
+                <tr>
+                        <td>
+                                <input type="text" name="mobilephonenumber" />
+                        </td>
+                </tr>                
+                <tr>
+                        <td><input type="submit" name="submit" value="verstuur" /></td>
+                </tr>
+        </table>
+</form>                

@@ -27,7 +27,7 @@
                 public function fire_query($query)
                 {
                         $result = mysql_query($query) 
-                                                or die('MySqlDatabase: gdf'.mysql_error());
+                                                or die('MySqlDatabase: '.mysql_error());
                         return $result;
                 }                
         }
