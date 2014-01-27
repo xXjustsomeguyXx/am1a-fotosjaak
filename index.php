@@ -2,25 +2,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
 		<title>
-		 Mijn tweede website
+			Mijn eerste site
 		</title>
-		<link rel='stylesheet' type='text/css' href='css/style.css'/>
+		<link rel='stylesheet' type='text/css' href='./css/style.css'/>
 	</head>
-	<body>
+	<body >
 		<div id='container'>
-			<div id='banner'>
-			
+			<div id='banner'>		
 			</div>
 			<div id='content'>
 				<div id='link'>
 					<?php include("link.php"); ?>
 				</div>
-				<?php include("navigation.php"); ?>
+				<?php include("navigation.php"); ?>			
 			</div>
-			<div id ='footer'>
-		    contact | disclaimer | copyright| tools | privacy | advertisement| 
+			<div id='footer'>			
+				contact | disclaimer | copyright | tools | privacy | advertisement
 			</div>
 		</div>
 	</body>

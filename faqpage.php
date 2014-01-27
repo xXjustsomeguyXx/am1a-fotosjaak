@@ -1,48 +1,37 @@
-<?php
+<?php 
 	if (!isset($_GET['language']))
 	{
 		$_GET['language'] = 'dutch';
 	}
-		$userrole = array ('customer');
-		include("security.php"); 
-		include("connect_db.php");
-		$query = "SELECT * 
-				  FROM `faq`";
-		$result = mysql_query($query, $db);
-		
+	$userrole = array('customer');
+	include("security.php");
+	include("connect_db.php");
+	$query = "SELECT *
+			  FROM `faq`";
+	$result = mysql_query($query, $db);
 ?>
 
-<table class ='simple'>
+<table class='simple'>
 	<caption>
-	Faq pagina
-	
-	<a href='index.php?content=faqpage&language=english'>
-		<img src='./images/flag_gb.png' alt='' />
-	</a>
-	<a href='index.php?content=faqpage&language=dutch'>
-		<img src='./images/flag_nl.png' alt='' />
-	</a>
-	
+		Faq pagina
+		<a href='index.php?content=faqpage&language=english'>
+			<img src='./images/eng_vlag.png' alt='' />
+		</a>
+		<a href='index.php?content=faqpage&language=dutch'>
+			<img src='./images/ned_vlag.png' alt='' />
+		</a>
 	</caption>
 	<tr>
 		<th>
-		
 			id
-			
 		</th>
 		<th>
-		
 			vraag
-			
 		</th>
-		<th>	
-		
+		<th>
 			antwoord
-			
-		</th>
+		</th>	
 	</tr>
-
-
 <?php
 while ( $record = mysql_fetch_array($result))
 {
@@ -50,9 +39,6 @@ while ( $record = mysql_fetch_array($result))
 			<td>
 				".$record['id']."
 			</td>
-		 
-		  
-		  
 			<td>
 				";
 			if ($_GET['language'] == 'english')
@@ -63,21 +49,21 @@ while ( $record = mysql_fetch_array($result))
 			{
 				echo $record['question_dutch'];
 			}
-			echo"
+			echo "
 			</td>
 			<td>
-			";
+				";
 			if ($_GET['language'] == 'english')
 			{
-				echo $record['answer_english'];
+				echo $record['answer_english'];				
 			}
 			else
 			{
 				echo $record['answer_dutch'];
 			}
-			echo"
-			</td>
-		  </tr>	"; 		  
+			echo "
+			</td>	
+		  </tr>";
 }
 ?>
 </table>

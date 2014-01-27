@@ -1,63 +1,60 @@
-<uL> 
-	
+<ul>
 	<li>
-		<a href="index.php?content=Homepage"><b>home</b></a>
+		<a href="index.php?content=homepage">home</a>
 	</li>
-<?php if ( isset($_SESSION[ 'userrole' ]))
+	<?php 
+		if (isset($_SESSION['userrole']))
 		{
-				echo "	<li>
-							<a href='index.php?content=logout'><b>uitloggen</b></a>
-							</li>";
-				switch ($_SESSION[ 'userrole' ])
-				{
-					case 'customer':
-						echo "<li>
-								<a href='index.php?content=download_page'><b>Download Game</b></a>
-							  </li>";
-						echo "<li>
-								<a href='index.php?content=customer_homepage'><b>customer home</b></a>
-							  </li>";
-						echo "<li>
-								<a href='index.php?content=faqpage'><b>FAQ</b></a>
-							  </li>";
-						echo "<li>
-								<a href='index.php?content=opdracht'><b>opdracht</b></a>
-							  </li>";
-					break;
-					case 'administrator':
-					echo 	  "<li>
-								<a herf=''>admin-link</a>
-							   <li>";
-					break;
-					
-					case 'root':
-						echo "<li>
-								<a href='index.php?content=developer_homepage'>dev-home</a>
-							  <li>";
-							  
-					case 'developer':
-						echo "<li>
-								<a herf=''>extradevlink</a>
-							  <li>";
-					break;
-					
-					case 'photographer':
-						echo "<li>
-								<a herf=''>pho-link</a>
-							  <li>";
-					
-				}
+			echo "<li>
+					<a href='index.php?content=logout'>uitloggen</a>
+				  </li>";
+			switch ($_SESSION['userrole'])
+			{
+				case 'customer':
+					echo "<li>
+							<a href='index.php?content=downloadpage'>downloads</a>					
+						  </li>";
+						  echo "<li>
+							<a href='index.php?content=customer_homepage'>user home</a>					
+						  </li>"; 
+						  echo "<li>
+							<a href='index.php?content=faqpage'>faq</a>				
+						  </li>";
+						  echo "<li>
+						  			<a href='index.php?content=opdracht'>
+						  				opdracht
+						  			</a>
+						  		</li>"; 
+				break;
+				case 'administrator':
+					echo "<li>
+							<a href=''>admin-link</a>
+						  </li>";
+				break;
+				case 'root':
+					echo "<li>
+							<a href='index.php?content=developer_homepage'>dev-home</a>
+						  </li>";
+				case 'developer':
+					echo "<li>
+							<a href=''>dev-link</a>
+						  </li>";
+				break;
+				case 'photographer':
+					echo "<li>
+							<a href=''>pho-link</a>
+						  </li>";
+				break;				
+			}
 		}
 		else
 		{
-			echo "
-					<li>
-					<a href='index.php?content=login_form'><b>Inloggen</b></a>
-					</li>
-					<li>
-					<a href='index.php?content=Register_form'><b>registratie</b></a>
-					</li>";
+			echo "<li>
+					<a href='index.php?content=login_form'>inloggen</a>
+				  </li>
+				  <li>
+					<a href='index.php?content=register_form'>registratie</a>
+				  </li>";
 		}
-?>
-</font>
-</uL>
+	?>	
+</ul>
