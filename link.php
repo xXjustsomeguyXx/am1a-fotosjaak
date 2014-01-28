@@ -48,7 +48,7 @@
 				break;
 				case 'coworker':
 					echo "<li>
-						   <a href='index.php?content=Coworker'>Co-Home</a>
+						   <a href='index.php?content=Coworker'>PandaBeer</a>
 						  </li>";
 				break;			
 			}

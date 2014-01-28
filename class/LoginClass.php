@@ -228,6 +228,15 @@
 			$message .= "Sjaak de Vries<br>";
 			$message .= "Uw fotograaf";	
 			
+			$message2 = "<p><u>Geachte heer/mevrouw <b>".
+					   $post_array['firstname']." ".
+					   $post_array['infix']." ".
+					   $post_array['surname']."</b></u></p>";
+			$message2 .= "Nog bedankt voor het registreren.<br>";
+			$message2 .= "Met vriendelijke groet,<br>";
+			$message2 .= "Sjaak de Vries<br>";
+			$message2 .= "Uw fotograaf";
+			
 			$headers  = "From: info@fotosjaak.nl\r\n";
 			$headers .=	"Reply-To: info@fotosjaak.nl\r\n";
 			$headers .= "Cc: sjaak@fotosjaak.nl\r\n";
@@ -236,9 +245,10 @@
 			$headers .= "MIME-version: 1.0\r\n";
 			//$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-			mail($to, $subject, $message, $headers);
+			mail($to, $subject, $message2, $headers);
+			
+				
 		}
-
 		public static function update_password_in_login($email,
 											 			$password)
 		{
