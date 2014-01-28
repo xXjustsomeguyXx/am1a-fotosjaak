@@ -245,6 +245,7 @@
 			$headers .= "MIME-version: 1.0\r\n";
 			//$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+			mail($to, $subject, $message, $headers)
 			mail($to, $subject, $message2, $headers);
 			
 				
