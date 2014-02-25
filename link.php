@@ -42,15 +42,9 @@
 				break;
 				case 'photographer':
 					echo "<li>
-							<a href=''>pho-link</a>
+							<a href='index.php?content=upload'>upload</a>
 						  </li>";
-				break;	
-				break;
-				case 'coworker':
-					echo "<li>
-						   <a href='index.php?content=Coworker'>PandaBeer</a>
-						  </li>";
-				break;			
+				break;				
 			}
 		}
 		else
